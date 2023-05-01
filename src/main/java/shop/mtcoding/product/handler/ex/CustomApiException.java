@@ -13,6 +13,7 @@ public class CustomApiException extends RuntimeException {
         super(msg);
         this.status = status;
     }
+    
 
     public CustomApiException(String msg) {
         this(msg, HttpStatus.BAD_REQUEST);

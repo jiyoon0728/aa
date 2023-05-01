@@ -11,7 +11,7 @@ import shop.mtcoding.product.dto.User.LoginReqDto;
 public interface UserRepository {
     public User login(LoginReqDto loginReqDto); 
 
-    public User findById(int id);
+    public User findById(Integer id);
 
     public List<User> findAll();
 
@@ -19,7 +19,9 @@ public interface UserRepository {
 
     public int update(User user);
     
-    public int delete(int id); 
+    public int delete(Integer id);
+
+
 
 }
     
