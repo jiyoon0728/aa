@@ -27,5 +27,8 @@
     <select id="findByName" resultType="shop.mtcoding.product.model.product.Product">
       select * from product where name = #{productName}
    </select>
-
+ 
+   <update id="productQtyUpdate">
+      update product set qty = qty - #{ordersQty} where id = #{productId}
+   </update>
 </mapper>

@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import shop.mtcoding.product.dto.ResponseDto;
-import shop.mtcoding.product.dto.Product.ProductReqDto.ProductAddReqDto;
-import shop.mtcoding.product.dto.Product.ProductReqDto.SameReqDto;
+import shop.mtcoding.product.dto.product.ProductReqDto.ProductAddReqDto;
+import shop.mtcoding.product.dto.product.ProductReqDto.SameReqDto;
 import shop.mtcoding.product.model.product.Product;
 import shop.mtcoding.product.model.product.ProductRepository;
 
@@ -27,7 +27,6 @@ public class ProductController {
     public String addForm() {
         return "product/addForm";
     }
-    
 
     @GetMapping("/product/{id}")
     public String detail(@PathVariable Integer id, Model model) {
@@ -74,7 +73,7 @@ public class ProductController {
         }
     }
 
-    //상품 중복 확인
+    // 상품 중복 확인
     @GetMapping("/product/productnameSameCheck")
     public @ResponseBody ResponseDto<?> check(String productname, SameReqDto SameReqDto) {
 
@@ -91,7 +90,7 @@ public class ProductController {
         }
     }
 
-    //상품 등록하기 
+    // 상품 등록하기
     @PostMapping("/product/add")
     public @ResponseBody ResponseDto<?> add(@RequestBody ProductAddReqDto productAddReqDto) {
         System.out.println("디버깅 : " + productAddReqDto.getProductName());

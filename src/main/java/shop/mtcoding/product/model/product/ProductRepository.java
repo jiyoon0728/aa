@@ -5,7 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import shop.mtcoding.product.dto.Product.ProductReqDto.ProductAddReqDto;
+import shop.mtcoding.product.dto.orders.OrdersReqDto;
+import shop.mtcoding.product.dto.product.ProductReqDto.ProductAddReqDto;
 
 @Mapper
 public interface ProductRepository {
@@ -19,13 +20,10 @@ public interface ProductRepository {
 
     public int update(@Param("id") int id, @Param("name") String name, @Param("price") int price,
             @Param("qty") int qty);
-            
-    //ajax 중복체크
+
+    // ajax 중복체크
     public Product findByName(String productname);
 
-    
+    public void productQtyUpdate(OrdersReqDto ordersReqDto);
 
-    
-
-    
 }
