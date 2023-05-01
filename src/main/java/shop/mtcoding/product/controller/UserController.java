@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import shop.mtcoding.product.dto.User.JoinReqDto;
 import shop.mtcoding.product.dto.User.LoginReqDto;
+import shop.mtcoding.product.handler.ex.CustomException;
 import shop.mtcoding.product.model.user.User;
 import shop.mtcoding.product.model.user.UserRepository;
 
@@ -28,6 +30,12 @@ public class UserController {
 
 	@PostMapping("/login")
 	public String login(LoginReqDto loginReqDto) {
+        if (loginReqDto.getUsername() == null || loginReqDto.getUsername().isEmpty()) {
+            throw new CustomException("username을 작성해주세요");
+        }
+        if (loginReqDto.getPassword() == null || loginReqDto.getPassword().isEmpty()) {
+            throw new CustomException("password를 작성해주세요");
+        }
         User principal = userRepository.login(loginReqDto);
 
         session.setAttribute("principal", principal);
@@ -42,5 +50,14 @@ public class UserController {
 		session.invalidate();
 		return "redirect:/";
 	}
+    @GetMapping("/joinForm")
+	public String joinForm() {
+		return "user/joinForm";
+	}
 
+	@PostMapping("/join")
+	public String join(JoinReqDto joinReqDto) {
+		userRepository.insert(joinReqDto);
+		return "redirect:/loginForm";
+	}
 }
