@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import lombok.RequiredArgsConstructor;
 import shop.mtcoding.product.dto.orders.OrdersReqDto;
 import shop.mtcoding.product.model.orders.OrdersRepository;
+import shop.mtcoding.product.model.product.Product;
 import shop.mtcoding.product.model.product.ProductRepository;
 import shop.mtcoding.product.model.user.User;
 
@@ -37,6 +38,12 @@ public class OrdersController {
 
 		if (principal == null) {
 			return "redirect:/loginForm";
+		}
+
+		// 상품수량 - 구매수량 < 0
+		Product productPS = productRepository.findById(productId);
+		if (productPS.getQty() - ordersReqDto.getOrdersQty() < 0) {
+			return "redirect:/product/" + productId;
 		}
 
 		// 상품 구매 -> 구매목록 페이지로
