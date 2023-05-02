@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import shop.mtcoding.product.dto.orders.OrdersReqDto;
+import shop.mtcoding.product.dto.Orders.OrdersReqDto;
 
 @Mapper
 public interface OrdersRepository {

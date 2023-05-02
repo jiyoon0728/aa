@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
-import shop.mtcoding.product.dto.orders.OrdersReqDto;
+import shop.mtcoding.product.dto.Orders.OrdersReqDto;
 import shop.mtcoding.product.model.orders.OrdersRepository;
 import shop.mtcoding.product.model.product.Product;
 import shop.mtcoding.product.model.product.ProductRepository;

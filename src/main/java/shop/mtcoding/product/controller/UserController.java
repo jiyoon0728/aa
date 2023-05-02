@@ -3,14 +3,12 @@ package shop.mtcoding.product.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import shop.mtcoding.product.dto.user.JoinReqDto;
-import shop.mtcoding.product.dto.user.LoginReqDto;
-import shop.mtcoding.product.handler.ex.CustomApiException;
+import shop.mtcoding.product.dto.User.JoinReqDto;
+import shop.mtcoding.product.dto.User.LoginReqDto;
 import shop.mtcoding.product.handler.ex.CustomException;
 import shop.mtcoding.product.model.user.User;
 import shop.mtcoding.product.model.user.UserRepository;

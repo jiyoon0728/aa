@@ -1,4 +1,4 @@
-package shop.mtcoding.product.dto.orders;
+package shop.mtcoding.product.dto.Orders;
 
 import lombok.Getter;
 import lombok.Setter;
