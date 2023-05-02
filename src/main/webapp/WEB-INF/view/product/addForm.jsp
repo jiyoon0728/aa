@@ -4,7 +4,7 @@
 
 <div class="container">
     <h3>상품 등록 페이지</h3>
-    <%-- <form action="/product/add" method="post"> --%>
+    <form action="/product/add" method="post">
         <table class="table table-striped">
             <thead>
                 <tr>

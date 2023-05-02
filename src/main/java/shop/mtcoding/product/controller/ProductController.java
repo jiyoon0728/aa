@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import shop.mtcoding.product.dto.ResponseDto;
-import shop.mtcoding.product.dto.Product.ProductReqDto.ProductAddReqDto;
-import shop.mtcoding.product.dto.Product.ProductReqDto.SameReqDto;
+import shop.mtcoding.product.dto.product.ProductReqDto.ProductAddReqDto;
+import shop.mtcoding.product.dto.product.ProductReqDto.SameReqDto;
 import shop.mtcoding.product.model.product.Product;
 import shop.mtcoding.product.model.product.ProductRepository;
 

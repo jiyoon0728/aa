@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import shop.mtcoding.product.dto.User.JoinReqDto;
-import shop.mtcoding.product.dto.User.LoginReqDto;
+import shop.mtcoding.product.dto.user.JoinReqDto;
+import shop.mtcoding.product.dto.user.LoginReqDto;
 
 @Mapper
 public interface UserRepository {

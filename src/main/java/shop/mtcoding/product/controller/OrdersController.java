@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
-import shop.mtcoding.product.dto.Orders.OrdersReqDto;
+import shop.mtcoding.product.dto.orders.OrdersReqDto;
 import shop.mtcoding.product.model.orders.OrdersRepository;
 import shop.mtcoding.product.model.product.Product;
 import shop.mtcoding.product.model.product.ProductRepository;
@@ -27,10 +27,10 @@ public class OrdersController {
 	@GetMapping("/orders/ordersList")
 	public String ordersListForm(Model model) {
 		User principal = (User) session.getAttribute("principal");
-		List<OrdersReqDto> orderlist = ordersRepository.findAll(principal.getId());
-		model.addAttribute("orderslist", orderlist);
-		return "orders/ordersList";
-	}
+		List<OrdersReqDto> orderslist = ordersRepository.findAll(principal.getId());
+		model.addAttribute("orderslist",orderslist);
+        return "orders/ordersList"; 
+    }
 
 	@PostMapping("/orders/{productId}")
 	public String ordersList(@PathVariable Integer productId, OrdersReqDto ordersReqDto, Model model) {

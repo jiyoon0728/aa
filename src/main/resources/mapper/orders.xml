@@ -10,7 +10,7 @@
 	</select>
 
 	<select id="findAll"
-		resultType="shop.mtcoding.product.model.orders.Orders">
+		resultType="shop.mtcoding.product.dto.orders.OrdersReqDto">
 		SELECT * FROM ORDERS_TB WHERE user_id = #{userId} order by id desc
 	</select>
 

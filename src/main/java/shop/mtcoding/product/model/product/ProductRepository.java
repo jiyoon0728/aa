@@ -5,8 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import shop.mtcoding.product.dto.Orders.OrdersReqDto;
-import shop.mtcoding.product.dto.Product.ProductReqDto.ProductAddReqDto;
+import shop.mtcoding.product.dto.orders.OrdersReqDto;
+import shop.mtcoding.product.dto.product.ProductReqDto.ProductAddReqDto;
 
 
 @Mapper
